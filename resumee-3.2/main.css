@@ -1,0 +1,159 @@
+* {
+  font-family: 'avenir next condensed', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+
+body{
+  margin:30;
+  background-color: black
+}
+nav{
+  padding-left:4em;
+  padding-right: 4em;
+  /* TODO: figure out no longer staying fixed */
+  position: fixed;
+  width: 100%;
+  top:0;
+  left:0;
+  z-index:10;
+  background-color: black;
+  font-size:1em;
+  color:white;
+  }
+
+ 
+  nav ul {
+    margin:0;
+    padding:0;
+    display:flex;
+  }
+  nav li{
+    padding: 1em 0;
+    list-style-type: none;
+    padding: 25px;
+    font-size: 1.7em;
+  }
+  
+  nav li a {
+    color:white;
+    font-weight: 600;
+    text-decoration: none;
+    transition: .3s;
+  }
+  
+  nav li a:hover {
+    color:#68bd46;
+    opacity: 1;
+    text-decoration:none;
+  }
+  
+ .name{
+   grid-area: na;
+   font-family: 'avenir next', sans-serif;
+   color:white;
+   padding: 3em;
+   font-size:2em;
+   color:#6EBE47;
+ }
+  header{
+    grid-area: h;
+    text-align: left;
+    font-family: 'avenir next condensed', sans-serif;
+    background-color:#000000;
+    color:white;
+    padding: 2em;
+    
+  }
+  header h1{
+    color:#6EBE47;
+  }
+  header h3{
+    color:white;
+  }
+  header h4{
+    color:white;
+  }
+h3{
+  letter-spacing: px;
+}
+  .education{
+    grid-area: e;
+    font-family: 'anton', sans-serif;
+    background-color:black;
+    color:white;
+    font-family: 'avenir next condensed', sans-serif;
+    margin:1em 0;
+    padding: 2em;
+  }
+  .education h3{
+    color:#6EBE47;
+  }
+
+
+  
+
+  
+  .experience{
+    grid-area: x;
+    font-family: 'anton', sans-serif;
+    background-color:black;
+    color:white;
+    padding: 2em;
+  }
+  .experience h3{
+    color:#6EBE47;
+  }
+  
+
+  
+  .skills{
+    grid-area: s;
+    font-family: 'avenir next condensed', sans-serif;
+    background-color:black;
+    color:white;
+    margin:1em 0;
+    padding: 2em;
+  }
+  .skills h3{
+    color:#6EBE47;
+  }
+  
+  /* STEP 2 - BUILD YOUR DESKTOP AND TABLET GRIDS */
+  .container{
+    height: 100%;
+    display: grid;
+    /* space between gridlines */
+    grid-gap: 3px;
+    /* same for everyone */
+    grid-template-columns: repeat(2, 1fr);
+    /* this will be customized, based on your grid, use pixels or % */
+    grid-template-rows: auto;
+    /* use letters from step 1 to build the grid */
+    grid-template-areas:
+     "n n" 
+     ". ."
+      "na h"
+      "x s"
+      "x s"
+      "e .";
+  }
+  /* error when ttyring to turn on mobile grid, not snapping to 1 column */
+  /* STEP 3 - BUILD YOUR MOBILE GRID, WHAT BECOMES ACTIVE WHEN PIXELS ARE 800PX OR LESS */
+  @media screen and (max-width: 900px){
+    .container{
+      display: grid;
+      grid-gap: 3px;
+      /* grid is only 1 column, keep it this way */
+      grid-template-columns:1fr;
+      /* you can enter values or auto will adjust the box sizes based on content */
+      grid-template-rows: auto;
+      grid-template-areas:
+      "n"
+      "h"
+      "x"
+      "e"
+      "s";
+    }
+  }
